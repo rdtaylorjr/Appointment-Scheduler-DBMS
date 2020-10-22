@@ -1,2 +1,2 @@
 # Appointment-Scheduling-System
-School Final Project for C482 Advanced Java Concepts
+School Final Project for C195 Advanced Java Concepts
