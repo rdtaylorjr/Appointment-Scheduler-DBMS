@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="301.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="50.0" layoutY="36.0" text="Appointments">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+      <RadioButton fx:id="allRadio" layoutX="440.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#viewAll" selected="true" text="All">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="radio" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="weekRadio" layoutX="300.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#viewWeek" text="Week" toggleGroup="$radio">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="monthRadio" layoutX="370.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#viewMonth" text="Month" toggleGroup="$radio">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </RadioButton>
+      <Button fx:id="addButton" layoutX="499.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#addAppointment" text="Add">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifyButton" layoutX="543.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#modifyAppointment" text="Modify">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteButton" layoutX="601.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#deleteAppointment" text="Delete">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="customersButton" layoutX="454.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#loadCustomers" text="Customers">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="reportsButton" layoutX="532.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#loadReports" text="Reports">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+        <Button fx:id="logoutButton" layoutX="593.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#logout" text="Log Out">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Button>
+      <TableView fx:id="table" layoutX="50.0" layoutY="71.0" onMouseClicked="#clearError" prefHeight="153.0" prefWidth="600.0" style="-fx-font-size: 11;">
+         <columns>
+            <TableColumn fx:id="appointmentIDColumn" prefWidth="26.0" style="-fx-alignment: CENTER;" text="ID">
+               <cellValueFactory>
+                  <PropertyValueFactory property="appointmentID" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="titleColumn" prefWidth="35.0" style="-fx-alignment: CENTER;" text="Title">
+               <cellValueFactory>
+                  <PropertyValueFactory property="title" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="descriptionColumn" prefWidth="67.0" style="-fx-alignment: CENTER;" text="Description">
+               <cellValueFactory>
+                  <PropertyValueFactory property="description" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="locationColumn" prefWidth="56.0" style="-fx-alignment: CENTER;" text="Location">
+               <cellValueFactory>
+                  <PropertyValueFactory property="location" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="contactColumn" prefWidth="73.0" style="-fx-alignment: CENTER;" text="Contact">
+               <cellValueFactory>
+                  <PropertyValueFactory property="contact" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="typeColumn" prefWidth="88.0" style="-fx-alignment: CENTER;" text="Type">
+               <cellValueFactory>
+                  <PropertyValueFactory property="type" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="startColumn" prefWidth="97.0" style="-fx-alignment: CENTER;" text="Start">
+               <cellValueFactory>
+                  <PropertyValueFactory property="startFormatted" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="endColumn" minWidth="9.0" prefWidth="101.0" style="-fx-alignment: CENTER;" text="End">
+               <cellValueFactory>
+                  <PropertyValueFactory property="endFormatted" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="customerIDColumn" minWidth="0.0" prefWidth="54.0" style="-fx-alignment: CENTER;" text="Customer">
+               <cellValueFactory>
+                  <PropertyValueFactory property="customerID" />
+               </cellValueFactory>
+            </TableColumn>
+         </columns>
+      </TableView>
+        <Label fx:id="errorLabel" layoutX="50.0" layoutY="240.0" text="Error">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
