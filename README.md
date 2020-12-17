@@ -4,4 +4,4 @@ Graphical User Interface (GUI) tool for maintaining a server database system. Fa
 
 Programming languages: Java, JavaFX, MySQL
 
-C195 Advanced Java Concepts 
+C195 Advanced Java Concepts
